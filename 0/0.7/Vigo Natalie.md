@@ -1,7 +1,7 @@
 # Monitoreo de Aplicaciones con ELK Stack y Node.js
 
 ![ELKSTACK](./assets/elkstack.jpg)
-git 
+
 ## 1. Introducción
 
 El monitoreo de aplicaciones es fundamental para garantizar el funcionamiento óptimo y la disponibilidad de los sistemas en tiempo real. Permite a desarrolladores y administradores identificar problemas, analizar el rendimiento y optimizar recursos. Entre los principales beneficios del monitoreo se encuentran:
