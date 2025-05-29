@@ -1,6 +1,6 @@
 ### **Macavilca Justin - Stress Testing**
 
-### 1.Desarrollo Conceptual
+### Desarrollo Conceptual
 
 Las pruebas de estrés son un método de evaluación que se utiliza para determinar la estabilidad y resistencia de un sistema, infraestructura o entidad ante escenarios extremos. Tiene como objetivo identificar puntos débiles y evaluar la capacidad de respuesta y recuperación ante situaciones de crisis. Se trata de una simulación de escenarios que podrían ocurrir en producción: múltiples usuarios conectándose al mismo tiempo, solicitudes masivas a una API, consulta simultaneas a una base de datos o interacción concurrente con recursos compartidos. Las pruebas de estrés son una herramienta para evaluar la resiliencia de diversos sistemas y entidades, permitiendo tomar medidas preventivas para mitigar posibles riesgos.
 
