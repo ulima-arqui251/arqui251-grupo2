@@ -116,6 +116,7 @@ const producer = kafka.producer();
 
   app.listen(3000, () => console.log('Servidor escuchando en http://localhost:3000'));
 })();
+
 ```
 ### Usamos el docker para implementar el programa
 
