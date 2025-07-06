@@ -1,0 +1,45 @@
+{
+  "development": {
+    "username": "studymate",
+    "password": "12345",
+    "database": "studymate_dev",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": true,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true,
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    },
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
+  },
+  "test": {
+    "username": "studymate",
+    "password": "12345",
+    "database": "studymate_test",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "mysql",
+    "logging": false,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true,
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    }
+  }
+}
