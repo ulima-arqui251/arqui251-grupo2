@@ -1,0 +1,173 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* StudyMate custom CSS variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  
+  /* StudyMate brand colors */
+  --studymate-primary: #4c6ef5;
+  --studymate-secondary: #7c4dff;
+  --studymate-accent: #ff6b6b;
+  --studymate-bg: #f8f9fa;
+  --studymate-surface: #ffffff;
+  
+  /* Text colors */
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #868e96;
+}
+
+/* Light theme */
+[data-bs-theme="light"] {
+  color: var(--text-primary);
+  background-color: var(--studymate-bg);
+}
+
+/* Dark theme */
+[data-bs-theme="dark"] {
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* StudyMate specific styles */
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.btn-studymate {
+  background: linear-gradient(135deg, var(--studymate-primary), var(--studymate-secondary));
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-studymate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 110, 245, 0.4);
+  color: white;
+}
+
+.card-studymate {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-studymate:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Form styles */
+.form-control:focus {
+  border-color: var(--studymate-primary);
+  box-shadow: 0 0 0 0.2rem rgba(76, 110, 245, 0.25);
+}
+
+/* Progress bar styles */
+.progress-studymate {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}
+
+.progress-bar-studymate {
+  background: linear-gradient(90deg, var(--studymate-primary), var(--studymate-secondary));
+  border-radius: 4px;
+}
+
+/* Badge styles */
+.badge-studymate {
+  background: linear-gradient(135deg, var(--studymate-primary), var(--studymate-secondary));
+  color: white;
+  border-radius: 6px;
+  padding: 0.35em 0.8em;
+}
+
+/* Loading spinner */
+.spinner-studymate {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--studymate-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  
+  .card-studymate {
+    margin-bottom: 1rem;
+  }
+}

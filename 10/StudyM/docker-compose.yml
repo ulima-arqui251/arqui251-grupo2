@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: studymate-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_2025
+      MYSQL_DATABASE: studymate_db
+      MYSQL_USER: studymate_user
+      MYSQL_PASSWORD: studymate_pass_2025
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+  backend:
+    build: 
+      context: ./implementation/backend
+      dockerfile: Dockerfile
+    container_name: studymate-backend
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=studymate_user
+      - DB_PASS=studymate_pass_2025
+      - DB_NAME=studymate_db
+      - JWT_SECRET=studymate_jwt_secret_2025_super_secure
+      - FRONTEND_URL=http://localhost:3000
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./implementation/frontend
+      dockerfile: Dockerfile
+    container_name: studymate-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+
+networks:
+  studymate-network:
+    driver: bridge
