@@ -4,6 +4,7 @@ import { lessonsAPI } from '../../../shared/services/lessonsService'
 import { useNotifications } from '../../../shared/context/NotificationContext'
 import LoadingSpinner from '../../../shared/components/LoadingSpinner'
 import CourseCard from '../components/CourseCard'
+import Icon from '../../../shared/components/Icon'
 
 function LessonsPage() {
   const [courses, setCourses] = useState([])
@@ -132,7 +133,10 @@ function LessonsPage() {
       {/* Header */}
       <div className="row mb-4">
         <div className="col-12">
-          <h1 className="mb-3">📚 Lecciones y Cursos</h1>
+          <h1 className="mb-3 d-flex align-items-center">
+            <Icon name="books" size={32} color="#007bff" className="me-2" />
+            Lecciones y Cursos
+          </h1>
           <p className="text-muted">Explora nuestro catálogo de cursos y continúa tu aprendizaje</p>
         </div>
       </div>
@@ -171,7 +175,10 @@ function LessonsPage() {
       {/* Enrolled Courses */}
       {enrolledCoursesData.length > 0 && (
         <div className="mb-5">
-          <h3 className="mb-3">📖 Mis Cursos</h3>
+          <h3 className="mb-3 d-flex align-items-center">
+            <Icon name="book" size={24} color="#28a745" className="me-2" />
+            Mis Cursos
+          </h3>
           <div className="row">
             {enrolledCoursesData.map(course => (
               <div key={course.id} className="col-md-6 col-lg-4 mb-4">
@@ -188,7 +195,10 @@ function LessonsPage() {
 
       {/* Available Courses */}
       <div className="mb-5">
-        <h3 className="mb-3">🌟 Cursos Disponibles</h3>
+        <h3 className="mb-3 d-flex align-items-center">
+          <Icon name="star" size={24} color="#ffc107" className="me-2" />
+          Cursos Disponibles
+        </h3>
         {availableCoursesData.length > 0 ? (
           <div className="row">
             {availableCoursesData.map(course => (

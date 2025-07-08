@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import Icon from './Icon'
 
 function Navbar() {
   const { isAuthenticated, user, logout } = useAuth()
@@ -15,8 +16,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
       <div className="container">
-        <Link className="navbar-brand fw-bold" to="/">
-          📚 StudyMate
+        <Link className="navbar-brand fw-bold d-flex align-items-center" to="/">
+          <Icon name="books" size={24} color="#ffffff" className="me-2" />
+          StudyMate
         </Link>
 
         <button

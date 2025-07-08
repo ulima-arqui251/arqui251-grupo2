@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: studymate-mysql-dev
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_2025
+      MYSQL_DATABASE: studymate_db
+      MYSQL_USER: studymate_user
+      MYSQL_PASSWORD: studymate_pass_2025
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data_dev:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+  backend:
+    build: 
+      context: ./implementation/backend
+      dockerfile: Dockerfile
+    container_name: studymate-backend-dev
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=studymate_user
+      - DB_PASS=studymate_pass_2025
+      - DB_NAME=studymate_db
+      - JWT_SECRET=studymate_jwt_secret_2025_super_secure
+      - FRONTEND_URL=http://localhost:3000
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+    volumes:
+      # Montar código fuente para hot reload
+      - ./implementation/backend/src:/app/src
+      - ./implementation/backend/package.json:/app/package.json
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./implementation/frontend
+      dockerfile: Dockerfile.dev
+    container_name: studymate-frontend-dev
+    environment:
+      - VITE_API_URL=http://localhost:3001/api
+      - VITE_APP_NAME=StudyMate
+    ports:
+      - "3000:5173"
+    depends_on:
+      - backend
+    volumes:
+      # Montar código fuente para hot reload
+      - ./implementation/frontend/src:/app/src
+      - ./implementation/frontend/public:/app/public
+      - ./implementation/frontend/package.json:/app/package.json
+      - ./implementation/frontend/vite.config.js:/app/vite.config.js
+    networks:
+      - studymate-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data_dev:
+
+networks:
+  studymate-network:
+    driver: bridge 

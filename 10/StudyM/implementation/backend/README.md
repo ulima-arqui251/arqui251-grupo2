@@ -64,17 +64,17 @@ Cambiar contraseña
 ## Características Implementadas
 
 ### Seguridad (ESC-01)
-- ✅ Bloqueo de cuenta tras 3 intentos fallidos
-- ✅ Tiempo de bloqueo de 15 minutos
-- ✅ Encriptación de contraseñas con bcrypt
+-  Bloqueo de cuenta tras 3 intentos fallidos
+-  Tiempo de bloqueo de 15 minutos
+-  Encriptación de contraseñas con bcrypt
 
 ### Escalabilidad (ESC-03)
-- ✅ Rate limiting: 100 requests por 15 min
-- ✅ JWT stateless para escalabilidad horizontal
+-  Rate limiting: 100 requests por 15 min
+-  JWT stateless para escalabilidad horizontal
 
 ### Control de Acceso (ESC-16)
-- ✅ Roles: estudiante, docente, admin
-- ✅ Middleware de autorización por roles
+-  Roles: estudiante, docente, admin
+-  Middleware de autorización por roles
 
 ## Testing
 
@@ -158,13 +158,13 @@ curl -X POST http://localhost:3001/api/gamification/init-achievements \
 
 ## Módulos Implementados
 
-### ✅ 1. Auth + JWT (Completado)
+###  1. Auth + JWT (Completado)
 - Registro y login de usuarios
 - Autenticación con JWT
 - Roles: estudiante, teacher, admin
 - Middleware de autenticación
 
-### ✅ 2. Lecciones (Completado)
+###  2. Lecciones (Completado)
 - CRUD completo de lecciones
 - Sistema de progreso por estudiante
 - Filtros por materia, nivel, búsqueda
@@ -183,7 +183,7 @@ curl -X POST http://localhost:3001/api/gamification/init-achievements \
 - `GET /api/lessons/progress/me` - Mi progreso
 - `GET /api/lessons/:id/stats` - Estadísticas (docentes)
 
-### ✅ 3. Gamificación (Completado)
+###  3. Gamificación (Completado)
 - Sistema completo de puntos y niveles
 - Logros y achievements con progreso
 - Rankings globales y por materia
@@ -213,7 +213,7 @@ curl -X POST http://localhost:3001/api/gamification/init-achievements \
 - **Rachas**: Seguimiento de días consecutivos de actividad
 - **Bonus**: Puntos extra por puntuación perfecta y subida de nivel
 
-### ✅ 4. Integración con Azure (Completado)
+###  4. Integración con Azure (Completado)
 - Análisis de sentimientos en contenido educativo
 - Extracción de frases clave y temas
 - Procesamiento de imágenes y OCR
@@ -321,8 +321,8 @@ curl -X GET http://localhost:3001/api/azure/status \
 ```
 
 ## Próximos Módulos
-1. ✅ Auth + JWT (Completado)
-2. ✅ Lecciones básicas (Completado)
-3. ✅ Gamificación (Completado)
-4. ✅ Azure integration (Completado)
-5. ⏳ Comunidad + Panel docente
+1.  Auth + JWT (Completado)
+2.  Lecciones básicas (Completado)
+3.  Gamificación (Completado)
+4.  Azure integration (Completado)
+5.  Comunidad + Panel docente

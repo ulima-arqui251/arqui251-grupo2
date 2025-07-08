@@ -1,49 +1,6 @@
-# 🧪 StudyMate - Pruebas de Funcionalidades
+# StudyMate - Pruebas de Funcionalidades
 
-## 🎯 Guía de Pruebas Completa
-
-Esta guía te ayudará a validar todas las funcionalidades de StudyMate paso a paso.
-
-## 📋 Checklist de Pruebas
-
-### ✅ Funcionalidades Básicas
-- [ ] Registro de usuarios
-- [ ] Login de usuarios
-- [ ] Recuperación de contraseña
-- [ ] Cambio de contraseña
-- [ ] Logout
-
-### ✅ Autenticación 2FA
-- [ ] Generar QR para 2FA
-- [ ] Habilitar 2FA
-- [ ] Login con 2FA
-- [ ] Usar códigos de respaldo
-- [ ] Deshabilitar 2FA
-
-### ✅ Control de Acceso
-- [ ] Acceso por roles (estudiante/docente/admin)
-- [ ] Protección de endpoints
-- [ ] Validación de permisos
-
-### ✅ Gamificación
-- [ ] Sistema de puntos
-- [ ] Logros y badges
-- [ ] Ranking global
-- [ ] Progreso personal
-
-### ✅ Comunidad
-- [ ] Crear publicaciones
-- [ ] Comentar y dar likes
-- [ ] Crear grupos de estudio
-- [ ] Filtrar contenido
-
-### ✅ Gestión de Lecciones
-- [ ] Crear lecciones (docente)
-- [ ] Completar lecciones (estudiante)
-- [ ] Evaluar progreso
-- [ ] Generar reportes
-
-## 🚀 Scripts de Prueba
+## Scripts de Prueba
 
 ### 1. Configurar Entorno
 
@@ -255,7 +212,7 @@ curl -X GET http://localhost:3001/api/admin/users \
   -H "Authorization: Bearer $TOKEN"
 ```
 
-## 🎮 Pruebas desde el Frontend
+## Pruebas desde el Frontend
 
 ### 1. Acceder a la Aplicación
 ```bash
@@ -289,7 +246,7 @@ http://localhost:3000
 4. **Perfil**: Actualizar información personal
 5. **Gamificación**: Verificar puntos y logros
 
-## 📊 Métricas de Rendimiento
+## Métricas de Rendimiento
 
 ### Pruebas de Carga Básicas
 
@@ -331,7 +288,7 @@ cat > curl-format.txt << 'EOF'
 EOF
 ```
 
-## 🔍 Validación de Logs
+## Validación de Logs
 
 ### Verificar Logs del Backend
 ```bash
@@ -363,7 +320,7 @@ docker-compose logs mysql
 docker-compose logs mysql | grep -i "connection\|connect"
 ```
 
-## 🚨 Solución de Problemas Comunes
+##  Solución de Problemas Comunes
 
 ### Error: "Token inválido"
 ```bash
@@ -399,37 +356,7 @@ curl -X GET http://localhost:3001/api/auth/2fa/status \
   -H "Authorization: Bearer $TOKEN"
 ```
 
-## 📈 Reporte de Resultados
-
-### Formato de Reporte
-```markdown
-# Reporte de Pruebas StudyMate
-
-## Fecha: $(date)
-
-### Funcionalidades Probadas:
-- [ ] Registro: ✅ Exitoso / ❌ Fallido
-- [ ] Login: ✅ Exitoso / ❌ Fallido
-- [ ] 2FA: ✅ Exitoso / ❌ Fallido
-- [ ] Gamificación: ✅ Exitoso / ❌ Fallido
-- [ ] Comunidad: ✅ Exitoso / ❌ Fallido
-- [ ] Lecciones: ✅ Exitoso / ❌ Fallido
-
-### Métricas de Rendimiento:
-- Tiempo de respuesta promedio: X ms
-- Logins concurrentes exitosos: X/10
+X/10
 - Errores encontrados: X
 
-### Problemas Identificados:
-1. [Descripción del problema]
-2. [Solución aplicada]
 
-### Recomendaciones:
-1. [Mejora sugerida]
-2. [Próximos pasos]
-```
-
----
-
-**Última actualización**: 15 de enero de 2025
-**Autor**: Equipo de Desarrollo StudyMate

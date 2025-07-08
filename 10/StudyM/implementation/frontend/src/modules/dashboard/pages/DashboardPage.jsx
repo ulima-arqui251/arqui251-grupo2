@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../shared/context/AuthContext'
 import LoadingSpinner from '../../../shared/components/LoadingSpinner'
+import Icon from '../../../shared/components/Icon'
 
 function DashboardPage() {
   const { user } = useAuth()
@@ -69,7 +70,9 @@ function DashboardPage() {
         <div className="col-md-3 mb-3">
           <div className="card text-center border-0 shadow-sm">
             <div className="card-body">
-              <div className="display-4 text-primary mb-2">📚</div>
+              <div className="mb-2">
+                <Icon name="books" size={64} color="#007bff" />
+              </div>
               <h3 className="card-title">{stats.courses}</h3>
               <p className="card-text text-muted">Cursos Activos</p>
             </div>
@@ -78,7 +81,9 @@ function DashboardPage() {
         <div className="col-md-3 mb-3">
           <div className="card text-center border-0 shadow-sm">
             <div className="card-body">
-              <div className="display-4 text-success mb-2">✅</div>
+              <div className="mb-2">
+                <i className="fas fa-check-circle text-success" style={{ fontSize: '4rem' }}></i>
+              </div>
               <h3 className="card-title">{stats.completedLessons}</h3>
               <p className="card-text text-muted">Lecciones Completadas</p>
             </div>
@@ -87,7 +92,9 @@ function DashboardPage() {
         <div className="col-md-3 mb-3">
           <div className="card text-center border-0 shadow-sm">
             <div className="card-body">
-              <div className="display-4 text-warning mb-2">⭐</div>
+              <div className="mb-2">
+                <Icon name="star" size={64} color="#ffc107" />
+              </div>
               <h3 className="card-title">{stats.points}</h3>
               <p className="card-text text-muted">Puntos</p>
             </div>
@@ -96,7 +103,9 @@ function DashboardPage() {
         <div className="col-md-3 mb-3">
           <div className="card text-center border-0 shadow-sm">
             <div className="card-body">
-              <div className="display-4 text-info mb-2">🏆</div>
+              <div className="mb-2">
+                <Icon name="trophy" size={64} color="#17a2b8" />
+              </div>
               <h3 className="card-title">{stats.achievements}</h3>
               <p className="card-text text-muted">Logros</p>
             </div>

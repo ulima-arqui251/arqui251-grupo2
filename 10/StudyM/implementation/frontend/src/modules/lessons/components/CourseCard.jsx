@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Icon from '../../../shared/components/Icon'
 
 function CourseCard({ course, onEnroll, isEnrolled = false }) {
   const progressPercentage = course.progress || 0
@@ -7,7 +8,7 @@ function CourseCard({ course, onEnroll, isEnrolled = false }) {
   return (
     <div className="card h-100 card-studymate">
       <div className="card-img-top bg-primary d-flex align-items-center justify-content-center" style={{ height: '200px' }}>
-        <span className="display-1 text-white">{course.icon || '📚'}</span>
+                    <Icon name="book" size={64} color="#ffffff" />
       </div>
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{course.title}</h5>

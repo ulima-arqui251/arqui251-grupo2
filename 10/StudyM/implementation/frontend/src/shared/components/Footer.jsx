@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Icon from './Icon'
 
 function Footer() {
   const currentYear = new Date().getFullYear()
@@ -9,7 +10,10 @@ function Footer() {
       <div className="container py-4">
         <div className="row">
           <div className="col-md-4 mb-3">
-            <h5 className="fw-bold">📚 StudyMate</h5>
+            <h5 className="fw-bold d-flex align-items-center">
+              <Icon name="books" size={20} color="#ffffff" className="me-2" />
+              StudyMate
+            </h5>
             <p className="text-muted">
               Plataforma de aprendizaje que hace que estudiar sea divertido y efectivo.
             </p>

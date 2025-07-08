@@ -2,7 +2,7 @@
 
 StudyMate es una plataforma educativa completa desarrollada con tecnologías modernas que permite a estudiantes y profesores gestionar cursos, lecciones y actividades de aprendizaje.
 
-## 🌟 Características
+##  Características
 
 - **Interfaz moderna y responsive** con React y Vite
 - **API REST robusta** desarrollada con Node.js y Express
@@ -11,7 +11,7 @@ StudyMate es una plataforma educativa completa desarrollada con tecnologías mod
 - **Arquitectura en contenedores** con Docker
 - **Configuración de proxy inverso** con Nginx
 
-## 🏗️ Arquitectura
+##  Arquitectura
 
 La aplicación está compuesta por tres servicios principales:
 
@@ -19,7 +19,7 @@ La aplicación está compuesta por tres servicios principales:
 - **Backend**: API REST en Node.js/Express (Puerto 3001)
 - **Base de datos**: MySQL 8.0 (Puerto 3307)
 
-## 🚀 Instalación y Uso
+##  Instalación y Uso
 
 ### Prerrequisitos
 
@@ -63,7 +63,7 @@ docker-compose up --build -d
 docker ps
 ```
 
-## 🔧 Configuración
+## Configuración
 
 ### Variables de entorno
 
@@ -91,7 +91,7 @@ NODE_ENV=production
 - **3001**: Backend API
 - **3307**: MySQL (mapeado desde 3306 interno)
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 StudyMate/
@@ -112,7 +112,7 @@ StudyMate/
 └── README.md
 ```
 
-## 🛠️ Desarrollo
+##  Desarrollo
 
 ### Desarrollo local del frontend
 
@@ -130,7 +130,7 @@ npm install
 npm run dev
 ```
 
-## 🔍 Verificación de salud
+##  Verificación de salud
 
 ### Endpoint de salud del backend
 
@@ -173,18 +173,18 @@ curl -X POST http://localhost:3001/api/auth/login \
   }'
 ```
 
-## ✅ Estado actual
+##  Estado actual
 
 ### Funcionalidades verificadas
 
-- ✅ Conexión a base de datos MySQL
-- ✅ Migración de esquemas automática
-- ✅ Servidor frontend accesible (puerto 3000)
-- ✅ API backend funcionando (puerto 3001)
-- ✅ Registro de usuarios completo
-- ✅ Login de usuarios funcional
-- ✅ Validación de datos de entrada
-- ✅ Favicon y recursos estáticos
+- Conexión a base de datos MySQL
+- Migración de esquemas automática
+- Servidor frontend accesible (puerto 3000)
+- API backend funcionando (puerto 3001)
+- Registro de usuarios completo
+- Login de usuarios funcional
+- Validación de datos de entrada
+- Favicon y recursos estáticos
 
 ### Problemas resueltos
 
@@ -195,7 +195,7 @@ curl -X POST http://localhost:3001/api/auth/login \
 
 ## � Estado de Funcionalidades Avanzadas
 
-### ✅ Autenticación 2FA (Implementada)
+### Autenticación 2FA (Implementada)
 La aplicación incluye un sistema completo de autenticación de dos factores:
 
 - **Generación de QR** para configurar Google Authenticator
@@ -216,7 +216,7 @@ El código incluye la estructura para autenticación institucional:
 - **Mapeo de roles institucionales** documentado
 - **Pendiente**: Implementación real de endpoints OAuth
 
-### 🔒 Control de Acceso por Roles
+### Control de Acceso por Roles
 Sistema robusto implementado:
 
 - **Roles soportados**: `estudiante`, `docente`, `admin`
@@ -224,27 +224,27 @@ Sistema robusto implementado:
 - **JWT claims** con información de rol y institución
 - **Protección de endpoints** según nivel de acceso
 
-### 📊 Módulos Funcionales Completos
+### Módulos Funcionales Completos
 
-#### ✅ Gamificación
+#### Gamificación
 - Sistema de puntos y logros
 - Ranking global y por institución
 - Estadísticas de progreso
 - Badges categorizados
 
-#### ✅ Comunidad
+#### Comunidad
 - Feed de publicaciones
 - Grupos de estudio
 - Sistema de likes y comentarios
 - Filtros por materia y nivel
 
-#### ✅ Gestión de Lecciones
+#### Gestión de Lecciones
 - CRUD completo de lecciones
 - Progreso de usuario
 - Evaluaciones y puntajes
 - Panel docente
 
-## 🎯 Próximos Pasos de Validación
+## Próximos Pasos de Validación
 
 ### 1. Autenticación Avanzada
 - **Implementar endpoints OAuth** para Google/Microsoft
@@ -276,7 +276,7 @@ Sistema robusto implementado:
 - **Alertas automáticas** para fallos críticos
 - **Dashboard de salud** del sistema
 
-## 🛠️ Comandos de Validación Rápida
+## Comandos de Validación Rápida
 
 ```bash
 # Verificar estado de contenedores
@@ -294,7 +294,7 @@ docker-compose logs frontend
 docker-compose build && docker-compose up -d
 ```
 
-## �🚨 Solución de problemas
+##  Solución de problemas
 
 ### Los contenedores no inician
 1. Verificar que Docker esté ejecutándose
@@ -315,66 +315,42 @@ docker-compose build && docker-compose up -d
 1. Verificar que MySQL esté ejecutándose: `docker-compose logs mysql`
 2. Conectar a la base de datos: `docker exec -it studymate-mysql mysql -u studymate_user -p`
 
-## 🏗️ Patrones Arquitecturales Implementados
+## Patrones Arquitecturales Implementados
 
-### ✅ **Patrones de Módulo** (100% implementados)
+### **Patrones de Módulo** (100% implementados)
 - **Modular Monolith**: Estructura por dominios funcionales
 - **MVC Pattern**: Organización interna de cada módulo
 - **Repository Pattern**: Abstracción de acceso a datos
 
-### ✅ **Patrones de Componente y Conector** (100% implementados)
+### **Patrones de Componente y Conector** (100% implementados)
 - **Express Router**: Organización modular de rutas
 - **JWT Authentication**: Autenticación stateless
 - **Observer Pattern**: Eventos internos entre módulos
 
-### ✅ **Patrones de Despliegue** (100% implementados)
+### **Patrones de Despliegue** (100% implementados)
 - **Frontend-Backend Separation**: Optimización con CDN
 - **Environment Separation**: Aislamiento entre ambientes
 - **CI/CD Pipeline**: Automatización de despliegues
 
-### ✅ **Patrones Cloud** (75% implementados)
-- **Azure Blob Storage**: Almacenamiento multimedia ✅
-- **Database as a Service**: MySQL gestionada ✅
+### **Patrones Cloud** (75% implementados)
+- **Azure Blob Storage**: Almacenamiento multimedia
+- **Database as a Service**: MySQL gestionada
 - **Azure AD B2C**: SSO institucional 🚧 (preparado)
 
-### 📊 **Resumen de Cobertura**
+### **Resumen de Cobertura**
 - **18/22 patrones implementados** (82%)
 - **4/22 patrones preparados** (18%)
 - **Cumple 100% de escenarios críticos** de calidad
 
-## 📋 Funcionalidades
+## Funcionalidades
 
-- ✅ Autenticación de usuarios con 2FA
-- ✅ Gestión de cursos y lecciones
-- ✅ Sistema de gamificación completo
-- ✅ Comunidad social integrada
-- ✅ Control de acceso por roles
-- ✅ Dashboard para estudiantes y profesores
-- ✅ Interfaz responsive moderna
-- ✅ API REST completa y documentada
+- Autenticación de usuarios con 2FA
+- Gestión de cursos y lecciones
+- Sistema de gamificación completo
+- Comunidad social integrada
+- Control de acceso por roles
+- Dashboard para estudiantes y profesores
+- Interfaz responsive moderna
+- API REST completa y documentada
 
-## 🤝 Contribución
 
-Para contribuir al proyecto:
-
-1. Fork el repositorio
-2. Crear una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Crear un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 👥 Equipo de desarrollo
-
-- **Arquitectura de Software**: Grupo 2
-- **Frontend**: React + Vite + TypeScript
-- **Backend**: Node.js + Express + TypeScript
-- **Base de datos**: MySQL 8.0
-- **DevOps**: Docker + Docker Compose
-
----
-
-¡Gracias por usar StudyMate! 🎓✨

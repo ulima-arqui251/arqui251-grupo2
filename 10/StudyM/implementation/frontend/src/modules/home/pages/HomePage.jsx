@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../../shared/context/AuthContext'
+import Icon from '../../../shared/components/Icon'
 
 function HomePage() {
   const { isAuthenticated } = useAuth()
@@ -45,7 +46,9 @@ function HomePage() {
             <div className="col-lg-6 text-center">
               <div className="hero-image">
                 <div className="bg-light rounded-3 p-5 text-dark">
-                  <h2>🎓</h2>
+                  <div className="mb-3">
+                    <Icon name="graduation" size={80} color="#007bff" />
+                  </div>
                   <p className="mb-0">Tu compañero de estudios ideal</p>
                 </div>
               </div>
@@ -70,7 +73,7 @@ function HomePage() {
               <div className="card h-100 text-center border-0 shadow-sm">
                 <div className="card-body p-4">
                   <div className="feature-icon mb-3">
-                    <span className="display-4">📚</span>
+                    <Icon name="books" size={64} color="#007bff" />
                   </div>
                   <h5 className="card-title">Lecciones Interactivas</h5>
                   <p className="card-text text-muted">
@@ -84,7 +87,7 @@ function HomePage() {
               <div className="card h-100 text-center border-0 shadow-sm">
                 <div className="card-body p-4">
                   <div className="feature-icon mb-3">
-                    <span className="display-4">🎮</span>
+                    <Icon name="gamepad" size={64} color="#007bff" />
                   </div>
                   <h5 className="card-title">Gamificación</h5>
                   <p className="card-text text-muted">
@@ -98,7 +101,7 @@ function HomePage() {
               <div className="card h-100 text-center border-0 shadow-sm">
                 <div className="card-body p-4">
                   <div className="feature-icon mb-3">
-                    <span className="display-4">👥</span>
+                    <Icon name="users" size={64} color="#007bff" />
                   </div>
                   <h5 className="card-title">Comunidad</h5>
                   <p className="card-text text-muted">
