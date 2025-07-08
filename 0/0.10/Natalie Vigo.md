@@ -80,7 +80,7 @@ Inicia la aplicación vulnerable:
 ```bash
 docker run --rm -p 3000:3000 bkimminich/juice-shop
 ```
-![docker](/assets/docker.png)
+![docker](/assets/docker.PNG)
 
 
 Abre en tu navegador:
@@ -88,7 +88,7 @@ Abre en tu navegador:
 ```
 http://localhost:3000
 ```
-![juice](/assets/juice.png)
+![juice](/assets/juice.PNG)
 ---
 
 ## 3.  Configuración de Burp Suite
@@ -110,7 +110,7 @@ http://localhost:3000
 GET /rest/products/search?q=apple HTTP/1.1
 Host: localhost:3000
 ```
-![Burp](/assets/Burp.png)
+![Burp](/assets/Burp.PNG)
 ---
 
 ## 4. Prueba de Inyección SQL Manual
@@ -154,7 +154,7 @@ Si SQLMap identifica la base de datos `juice_shop`, puedes extraer los datos de 
 ```bash
 python sqlmap.py -u "http://localhost:3000/rest/products/search?q=apple" -D juice_shop -T Users --dump
 ```
-![tablas](/assets/tablas.png)
+![tablas](/assets/tablas.PNG)
 ---
 
 ## 7. 📊 Resultados del Análisis
@@ -173,7 +173,7 @@ Y mostrará contenido sensible desde tablas como:
 ```
 [*] Users
 ```
-![users](/assets/users.png)
+![users](/assets/users.PNG)
 ---
 
 ## 8. Explicación Técnica
