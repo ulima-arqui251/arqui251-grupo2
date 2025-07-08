@@ -1,0 +1,79 @@
+services:
+  # Base de datos MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: studymate_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: studymate_root_2025
+      MYSQL_DATABASE: studymate_db
+      MYSQL_USER: studymate_user
+      MYSQL_PASSWORD: studymate_pass_2025
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - studymate_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Backend API
+  backend:
+    build:
+      context: ../implementation/backend
+      dockerfile: Dockerfile
+    container_name: studymate_backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      DB_PORT: 3307
+      DB_NAME: studymate_db
+      DB_USER: studymate_user
+      DB_PASS: studymate_pass_2025
+      JWT_SECRET: studymate_jwt_secret_2025_super_secure
+      FRONTEND_URL: http://localhost:3000
+    ports:
+      - "3001:3001"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ../implementation/backend:/app
+      - /app/node_modules
+    networks:
+      - studymate_network
+
+  # Frontend React
+  frontend:
+    build:
+      context: ../implementation/frontend
+      dockerfile: Dockerfile
+    container_name: studymate_frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: http://localhost:3001/api
+      VITE_APP_NAME: StudyMate
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ../implementation/frontend:/app
+      - /app/node_modules
+    networks:
+      - studymate_network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  studymate_network:
+    driver: bridge
