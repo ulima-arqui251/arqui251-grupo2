@@ -140,6 +140,8 @@ Al evaluar el rendimiento de estos frameworks, emergen patrones claros que refle
 
 **Angular** presenta el mayor overhead inicial con un FCP de 1.5 segundos y bundles que comienzan en 150KB, pero esta inversión inicial se justifica en aplicaciones complejas donde sus herramientas integradas y arquitectura estructurada proporcionan beneficios de desarrollo significativos.
 
+![Svelte](/assets/FrontEnd.jpg)
+
 ### Curva de Aprendizaje y Productividad del Desarrollador
 
 La **curva de aprendizaje** varía significativamente entre frameworks, impactando directamente en la productividad del equipo y los costos de proyecto:
@@ -163,6 +165,8 @@ El **ecosistema** de cada framework refleja su madurez y adopción en la industr
 **Vue.js** equilibra con aproximadamente 25,000 paquetes y un ecosistema oficial cohesivo. La calidad generalmente alta de las bibliotecas disponibles y la excelente documentación en múltiples idiomas hacen que sea atractivo para equipos internacionales.
 
 **Svelte** tiene el ecosistema más pequeño con aproximadamente 5,000 paquetes, pero está creciendo rápidamente. La calidad de las bibliotecas disponibles tiende a ser alta, reflejando la naturaleza selectiva de la comunidad Svelte.
+
+![Svelte](/assets/proyecto.webp)
 
 ## Recomendaciones Estratégicas por Contexto
 
