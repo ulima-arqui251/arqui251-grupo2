@@ -143,4 +143,4 @@ Archivo: install-nginx.yml
 ansible-playbook -i hosts.ini install-nginx.yml
 ```
 
-Este comando ejecutará todas las tareas en todos los servidores definidos en el grupo [web].
+Este comando ejecutará todas las tareas en todos los servidores que se hayan establecido en el grupo [web].
